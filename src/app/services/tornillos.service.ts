@@ -9,6 +9,7 @@ export class TornillosService {
 }
 
 export interface Tornillo {
+  id: number;
   name: string;
   price: number;
   format: string;
