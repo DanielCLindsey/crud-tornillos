@@ -5,7 +5,7 @@ export const initTornillos            = createAction('[Tornillos] Tornillos init
 export const tornillosInitialized     = createAction('[Tornillos] Tornillos initialized', props<{ nextId: number, tornillos: Tornillo[] }>());
 export const reloadTornillos          = createAction('[Tornillos] Tornillos reloading');
 export const tornillosReloaded        = createAction('[Tornillos] Tornillos reloaded', props<{ tornillos: Tornillo[] }>());
-export const tornilloIdUpdated        = createAction("[Tornillos] Tornillos' next id updated", props<{ nextId: number }>)
+export const tornilloIdUpdated        = createAction("[Tornillos] Tornillos' next id updated", props<{ id: number }>())
 
 export const createTornillo           = createAction('[Tornillo] Creating tornillo', props<{ tornillo: Tornillo }>());
 export const tornilloCreated          = createAction('[Tornillo] Tornillo created', props<{ tornillo: Tornillo }>());
