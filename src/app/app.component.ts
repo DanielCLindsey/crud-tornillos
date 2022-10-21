@@ -1,5 +1,4 @@
-import { Component, ContentChild } from '@angular/core';
-import { HeaderComponent } from './components/header/header.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
