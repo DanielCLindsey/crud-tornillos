@@ -1,0 +1,21 @@
+@use '../../../../styles/colors';
+.tornillos-card {
+  width: 400px;
+  margin: auto;
+
+  background-color: var(--grey-background);
+
+  &__content{
+    display: flex;
+  }
+  .revisar-button{
+    margin: auto;
+
+    &__content{
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+  }
+
+}
