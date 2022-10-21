@@ -1,7 +1,11 @@
+@use '../../../styles/colors';
+
 :host {
   display: flex;
   justify-content: space-between;
 
   height: 3rem;
   padding: 1rem;
+
+  border-bottom: 0.25rem solid var(--cucumber);
 }
