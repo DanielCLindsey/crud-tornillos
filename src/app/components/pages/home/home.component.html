@@ -3,11 +3,15 @@
   <mat-card class="tornillos-card">
     <mat-card-header>
       <mat-card-title>Tornillos</mat-card-title>
-      <mat-card-subtitle>100 por revisar</mat-card-subtitle>
+      <mat-card-subtitle>
+        <ng-container *ngIf="hasToCheck; else noData">
+            {{ tornillosAmount$ | async }} por revisar
+        </ng-container>
+      </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <app-content>
-        <button mat-flat-button color="primary"  class="revisar-button">
+        <button mat-flat-button color="primary"  class="revisar-button" [disabled]="!hasToCheck">
           <div class="revisar-button__content">
             <mat-icon>remove_red_eye</mat-icon>
             <span>Revisar</span>
@@ -17,3 +21,7 @@
     </mat-card-content>
   </mat-card>
 </app-content>
+
+<ng-template #noData>
+  No hay tornillos por revisar
+</ng-template>
