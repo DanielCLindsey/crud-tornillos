@@ -1,2 +1,15 @@
 <img src="../../../assets/mercadona-logo.svg" title="Mercadona" alt="Mercadona logo"/>
-<button mat-flat-button color="accent">Iniciar sesión</button>
+<ng-container *ngIf="isAuthenticated; else loginTemplate">
+  <div class="user-info">
+    <span class="user-info__name">
+      {{ userName }}
+    </span>
+    <button mat-icon-button class="user-info__logout" color="accent" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+</ng-container>
+
+<ng-template #loginTemplate>
+  <button mat-flat-button color="accent" (click)="login()">Iniciar sesión</button>
+</ng-template>

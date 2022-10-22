@@ -9,3 +9,10 @@
 
   border-bottom: 0.25rem solid var(--cucumber);
 }
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
