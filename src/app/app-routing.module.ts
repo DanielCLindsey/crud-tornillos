@@ -8,14 +8,14 @@ const routes: Routes = [
     loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: '**',
-    redirectTo: ''
-  },
-  {
     path: 'tornillos',
     canActivate: [AngularFireAuthGuard],
     loadChildren: () => import('./components/pages/tornillos/tornillos.module').then(m => m.TornillosModule)
-  }
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  },
 ];
 
 @NgModule({
