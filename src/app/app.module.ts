@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { tornilloReducer, TORNILLOS_FEATURE_KEY } from './stores/tornillos/tornillos.reducers';
 import { EffectsModule } from '@ngrx/effects';
+import { TornillosEffects } from './stores/tornillos/tornillos.effects';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot({
       [TORNILLOS_FEATURE_KEY]: tornilloReducer
     }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([TornillosEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
