@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { initTornillos } from 'src/app/stores/tornillos/tornillos.actions';
 import { selectTornillosAmount } from 'src/app/stores/tornillos/tornillos.selectors';
 
 @Component({
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy{
   constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(initTornillos());
+
     this.tornillosAmountSub = this.tornillosAmount$.subscribe((amount) => {
       this.hasToCheck = amount > 0;
     })
