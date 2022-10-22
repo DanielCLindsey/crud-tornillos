@@ -11,7 +11,7 @@
     </mat-card-header>
     <mat-card-content>
       <app-content>
-        <button mat-flat-button color="primary"  class="revisar-button" [disabled]="!hasToCheck">
+        <button mat-flat-button color="primary"  class="revisar-button" [disabled]="!hasToCheck" [routerLink]="['/tornillos']">
           <div class="revisar-button__content">
             <mat-icon>remove_red_eye</mat-icon>
             <span>Revisar</span>
