@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { changeSelectedTornillo, tornilloCreated, tornilloDeleted, tornilloIdUpdated, tornillosInitialized, tornillosUpdated, tornilloUpdated } from "./tornillos.actions";
+import { selectedTornilloChanged, tornilloCreated, tornilloDeleted, tornilloIdUpdated, tornillosInitialized, tornillosUpdated, tornilloUpdated } from "./tornillos.actions";
 import { TornillosState } from "./tornillos.state";
 
 export const TORNILLOS_FEATURE_KEY = 'tornillos';
@@ -18,5 +18,5 @@ export const tornilloReducer = createReducer(
   on(tornilloCreated, (state): TornillosState => ({...state, selectedTornillo: undefined})),
   on(tornilloUpdated, (state): TornillosState => ({...state, selectedTornillo: undefined})),
   on(tornilloDeleted, (state): TornillosState => ({...state, selectedTornillo: undefined})),
-  on(changeSelectedTornillo, (state, { selectedTornillo }): TornillosState => ({...state, selectedTornillo}))
+  on(selectedTornilloChanged, (state, { selectedTornillo }): TornillosState => ({...state, selectedTornillo}))
 )

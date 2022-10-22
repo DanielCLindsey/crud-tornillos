@@ -13,4 +13,5 @@ export const updateTornillo           = createAction('[Tornillo] Updating tornil
 export const tornilloUpdated          = createAction('[Tornillo] Tornillo updated');
 export const deleteTornillo           = createAction('[Tornillo] Deleting tornillo', props<{ tornillo: Tornillo }>());
 export const tornilloDeleted          = createAction('[Tornillo] Tornillo deleted');
-export const changeSelectedTornillo   = createAction('[Tornillo] Tornillo selected change', props<{ selectedTornillo?: Tornillo }>())
+export const changeSelectedTornillo   = createAction('[Tornillo] Tornillo selected change', props<{ selectedTornillo?: Tornillo }>());
+export const selectedTornilloChanged  = createAction('[Tornillo] Tornillo selected change', props<{ selectedTornillo?: Tornillo }>());
