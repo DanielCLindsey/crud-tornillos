@@ -22,3 +22,9 @@ export interface Tornillo {
   format: string;
   brand: string;
 }
+
+export interface TornilloTableColumnDef {
+  columnDef: string,
+  header: string,
+  cell: (element: Tornillo) => string;
+}
