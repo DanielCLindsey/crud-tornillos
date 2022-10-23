@@ -6,6 +6,8 @@ import { Tornillo, TornilloTableColumnDef } from 'src/app/services/tornillos.ser
 import { initTornillos } from 'src/app/stores/tornillos/tornillos.actions';
 import { selectTornillos } from 'src/app/stores/tornillos/tornillos.selectors';
 import { Subscription } from 'rxjs'
+import {MatDialog} from '@angular/material/dialog';
+import { CreateTornilloComponent } from '../../dialogs/create-tornillo/create-tornillo.component';
 
 @Component({
   selector: 'app-tornillos',
@@ -22,9 +24,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
 
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
-
-
-  constructor(private store: Store) {}
+  constructor(private store: Store, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.store.dispatch(initTornillos());
@@ -43,5 +43,12 @@ export class TornillosComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.tornillosSub?.unsubscribe();
+  }
+
+  createTornillo() {
+    this.dialog.open(CreateTornilloComponent, {
+      width: '80vw',
+      height: '80vh'
+    })
   }
 }
