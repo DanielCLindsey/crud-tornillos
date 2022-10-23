@@ -6,7 +6,7 @@ import { ContentModule } from '../../content/content.module';
 import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { FooterModule } from '../../footer/footer.module';
 import { CreateTornilloModule } from '../../dialogs/create-tornillo/create-tornillo.module';
 
