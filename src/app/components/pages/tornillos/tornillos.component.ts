@@ -10,6 +10,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { CreateTornilloComponent } from '../../dialogs/create-tornillo/create-tornillo.component';
 import { DeleteTornilloComponent } from '../../dialogs/delete-tornillo/delete-tornillo.component';
 import { ViewEncapsulation } from '@angular/core';
+import { ConfigTableComponent } from '../../dialogs/config-table/config-table.component';
 
 @Component({
   selector: 'app-tornillos',
@@ -86,6 +87,13 @@ export class TornillosComponent implements OnInit, OnDestroy {
       height: '200px',
       panelClass: 'error-dialog',
       data: tornillo
+    })
+  }
+
+  configTable() {
+    this.dialog.open(ConfigTableComponent, {
+      width: '80vw',
+      height: '70vh'
     })
   }
 }
