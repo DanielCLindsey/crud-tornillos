@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Store } from '@ngrx/store';
@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs'
 import {MatDialog} from '@angular/material/dialog';
 import { CreateTornilloComponent } from '../../dialogs/create-tornillo/create-tornillo.component';
 import { DeleteTornilloComponent } from '../../dialogs/delete-tornillo/delete-tornillo.component';
-import { ViewEncapsulation } from '@angular/core';
 import { ConfigTableComponent } from '../../dialogs/config-table/config-table.component';
 
 @Component({
