@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { Observable, take } from 'rxjs';
+import { DatabaseReference } from '@angular/fire/compat/database/interfaces';
+import { Store } from '@ngrx/store';
+import { from, Observable, take } from 'rxjs';
 
 
 @Injectable({
@@ -8,15 +10,18 @@ import { Observable, take } from 'rxjs';
 })
 export class TornillosService {
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private store: Store) { }
 
   getTornillos(): Observable<Tornillo[]> {
-    return this.db.list<Tornillo>('tornillos').valueChanges().pipe(take(1))
+    return this.db.list<Tornillo>('tornillos').valueChanges()
+  }
+
+  postTornillo(tornillo: Tornillo): Observable<DatabaseReference>{
+    return from(this.db.list<Tornillo>('tornillos').push(tornillo));
   }
 }
 
 export interface Tornillo {
-  id: number;
   name: string;
   price: number;
   format: string;
