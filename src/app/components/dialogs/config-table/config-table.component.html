@@ -1,0 +1,10 @@
+<div cdkDropList class="column-list" (cdkDropListDropped)="drop($event)">
+  <div class="column-list__column" *ngFor="let column of currentColumnOrder.values(); let i = index" cdkDrag>
+    <div class="order">{{ i }}</div>
+    <div class="options">
+      <div class="options__dragable"><button mat-icon-button><mat-icon>drag_indicator</mat-icon></button></div>
+      <div class="options__name">{{ column.header }}</div>
+      <div class="options__show"><button mat-icon-button><mat-icon>remove_red_eye</mat-icon></button></div>
+    </div>
+  </div>
+</div>

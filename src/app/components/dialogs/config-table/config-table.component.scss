@@ -1,0 +1,35 @@
+@use '../../../../styles/colors';
+.column-list{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__column {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+
+    .order{
+      height: 100%;
+      width: 3rem;
+      background-color: var(--grey-background);
+
+      border: 1px solid var(--grey-separator);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .options{
+      display: flex;
+      align-items: center;
+
+      height: 100%;
+      border-bottom: 1px solid var(--grey-separator);
+
+      &__name {
+        width: 20rem;
+      }
+    }
+  }
+}
