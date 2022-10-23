@@ -33,7 +33,6 @@ export class TornillosService {
 
   postTornillo(tornillo: Tornillo): Observable<DatabaseReference>{
     return from(this.db.list<Tornillo>('tornillos').push(tornillo).then((tornillo) => {
-      console.log('aaaa');
       this.store.dispatch(updateTornillos())
       return tornillo;
     }));
