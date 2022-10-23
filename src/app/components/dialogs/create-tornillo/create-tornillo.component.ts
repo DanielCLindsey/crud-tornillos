@@ -18,4 +18,24 @@ export class CreateTornilloComponent {
 
   constructor(public dialogRef: MatDialogRef<CreateTornilloComponent>) {}
 
+  decreaseNumber(control: string) {
+    const selectedControl = this.createTornillo.get([control]);
+    let currentValue = selectedControl?.value ?? 0;
+
+    if(currentValue > 0) {
+      //Avoid 0.30000000000000004
+      currentValue = (currentValue * 10 - 1)/10;
+      selectedControl?.setValue(currentValue);
+    }
+  }
+
+  increaseNumber(control: string) {
+    const selectedControl = this.createTornillo.get([control]);
+    let currentValue = selectedControl?.value ?? 0;
+
+    //Avoid 0.30000000000000004
+    currentValue = (currentValue * 10 + 1)/10;
+
+    selectedControl?.setValue(currentValue);
+  }
 }

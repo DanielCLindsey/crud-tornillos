@@ -11,9 +11,9 @@
   <div class="input-tornillo input-tornillo--50">
     <label for="price">Precio</label>
     <div class="input-tornillo__container input-tornillo__container--number">
-      <button mat-flat-button>-</button>
-      <input id="price" type="text" min="0" formControlName="price">
-      <button mat-flat-button>+</button>
+      <button mat-flat-button (click)="decreaseNumber('price')">-</button>
+      <input id="price" type="text" formControlName="price">
+      <button mat-flat-button (click)="increaseNumber('price')">+</button>
     </div>
   </div>
   <div class="input-tornillo input-tornillo--50">
