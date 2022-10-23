@@ -31,9 +31,28 @@ describe('CreateTornilloComponent', () => {
 
   it('should close', () => {
     component.close();
-  })
+  });
 
   it('should submit', () => {
     component.submit();
+  });
+
+  it('should not decrease number if number is 0', () => {
+    component.decreaseNumber('price');
+
+    expect(component.createTornillo.get('price')?.value).toEqual(0);
+  })
+
+  it('should decrease number if number is greater than 0', () => {
+    component.createTornillo.get('price')?.setValue(1);
+    component.decreaseNumber('price');
+
+    expect(component.createTornillo.get('price')?.value).toEqual(0.9);
+  })
+
+  it('should increase number by 0.1', () => {
+    component.increaseNumber('price');
+
+    expect(component.createTornillo.get('price')?.value).toEqual(0.1);
   })
 });
