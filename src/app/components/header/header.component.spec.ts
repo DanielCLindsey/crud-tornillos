@@ -25,6 +25,18 @@ describe('HeaderComponent', () => {
   });
 
   it('should create', () => {
+    spyOn(component.auth.authState, 'subscribe').and.stub().and.resolveTo({ user: { displayName: 'Daniel' }});
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
+  it('should login', () => {
+    spyOn(component.auth, 'signInWithPopup').and.stub().and.resolveTo({ user: { displayName: 'Daniel' }});
+    component.login();
+  })
+
+  it('should logout', () => {
+    spyOn(component.auth, 'signOut').and.stub();
+    component.logout();
+  })
 });
