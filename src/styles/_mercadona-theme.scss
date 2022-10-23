@@ -34,8 +34,8 @@ $cucumber-palette: (
 );
 
 $dark-grey-palette: (
-  50: var(--grey-background),
-  100: #cbcace,
+  50: var(--grey-separator),
+  100: var(--grey-background),
   200: #b7b5ba,
   300: #a2a0a6,
   400: #8e8b92,

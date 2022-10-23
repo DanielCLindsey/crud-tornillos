@@ -6,3 +6,28 @@
   position: sticky;
   bottom: 5.25rem;
 }
+
+.tornillos-table {
+  border-collapse: collapse;
+
+  td,th{
+    border: 1px solid var(--grey-separator);
+    vertical-align: middle;
+    padding: 0 1rem;
+  }
+  tr {
+    th {
+      background-color: var(--grey-header);
+      font-weight: bold;
+    }
+  }
+
+  tr:nth-child(odd) {
+    background-color: var(--grey-background);
+  }
+
+  .actions__container{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
