@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FooterModule } from '../../footer/footer.module';
+import { CreateTornilloModule } from '../../dialogs/create-tornillo/create-tornillo.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FooterModule } from '../../footer/footer.module';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    FooterModule
+    FooterModule,
+    CreateTornilloModule
   ],
   exports: [
     TornillosComponent

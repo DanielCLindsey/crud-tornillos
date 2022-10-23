@@ -48,7 +48,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
   createTornillo() {
     this.dialog.open(CreateTornilloComponent, {
       width: '80vw',
-      height: '80vh'
+      height: '70vh'
     })
   }
 }
