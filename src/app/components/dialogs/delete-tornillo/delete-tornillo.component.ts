@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { Tornillo } from 'src/app/services/tornillos.service';
+import { deleteTornillo } from 'src/app/stores/tornillos/tornillos.actions';
 
 @Component({
   selector: 'app-delete-tornillo',
@@ -7,5 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteTornilloComponent {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<DeleteTornilloComponent>, @Inject(MAT_DIALOG_DATA) public data: Tornillo, private store: Store) { }
+
+  delete() {
+    this.store.dispatch(deleteTornillo({ tornillo: this.data }));
+    this.close();
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
 }

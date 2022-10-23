@@ -8,6 +8,7 @@ import { selectTornillos } from 'src/app/stores/tornillos/tornillos.selectors';
 import { Subscription } from 'rxjs'
 import {MatDialog} from '@angular/material/dialog';
 import { CreateTornilloComponent } from '../../dialogs/create-tornillo/create-tornillo.component';
+import { DeleteTornilloComponent } from '../../dialogs/delete-tornillo/delete-tornillo.component';
 
 @Component({
   selector: 'app-tornillos',
@@ -76,4 +77,13 @@ export class TornillosComponent implements OnInit, OnDestroy {
 
     return `${startIndex + 1} - ${endIndex} de ${length} ítems | ${page + 1} de ${totalPages} páginas`;
   };
+
+  deleteTornillo(tornillo: Tornillo) {
+    this.dialog.open(DeleteTornilloComponent, {
+      width: '60vw',
+      height: '200px',
+      panelClass: 'error-dialog',
+      data: tornillo
+    })
+  }
 }

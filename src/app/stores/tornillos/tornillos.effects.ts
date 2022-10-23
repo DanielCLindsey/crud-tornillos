@@ -30,16 +30,14 @@ export class TornillosEffects {
     return this.actions$.pipe(
       ofType(createTornillo),
       switchMap(({ tornillo }) => this.tornillosService.postTornillo(tornillo)),
-      map(() => {
-        return tornilloCreated();
-      })
+      map(() => tornilloCreated())
     )
   });
 
   deleteTornillo$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(deleteTornillo),
-      switchMap(() => of()),
+      switchMap(({ tornillo }) => this.tornillosService.deleteTornillo(tornillo)),
       map(() => tornilloDeleted())
     )
   });

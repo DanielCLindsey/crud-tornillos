@@ -46,3 +46,8 @@ table {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.error-dialog{
+  border-top: 4px solid var(--error);
+  border-radius: 8px;
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DeleteTornilloComponent } from './delete-tornillo.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -9,7 +10,8 @@ import { DeleteTornilloComponent } from './delete-tornillo.component';
     DeleteTornilloComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   exports: [
     DeleteTornilloComponent

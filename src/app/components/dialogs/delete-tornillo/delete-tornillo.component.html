@@ -1,1 +1,10 @@
-<p>delete-tornillo works!</p>
+<div class="delete-tornillo">
+  <div class="delete-tornillo__message">
+      <h3>Confirmación</h3>
+    <p>¿Desea eliminar el elemento seleccionado?</p>
+  </div>
+  <div class="delete-tornillo__footer">
+    <button class="footer__button" mat-flat-button color="accent" (click)="close()">Cancelar</button>
+    <button class="footer__button" mat-flat-button color="warn" type="submit" (click)="delete()">Eliminar</button>
+  </div>
+</div>

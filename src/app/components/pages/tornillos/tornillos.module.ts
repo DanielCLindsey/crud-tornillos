@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { FooterModule } from '../../footer/footer.module';
 import { CreateTornilloModule } from '../../dialogs/create-tornillo/create-tornillo.module';
+import { DeleteTornilloModule } from '../../dialogs/delete-tornillo/delete-tornillo.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CreateTornilloModule } from '../../dialogs/create-tornillo/create-torni
     MatPaginatorModule,
     FooterModule,
     CreateTornilloModule,
+    DeleteTornilloModule
   ],
   exports: [
     TornillosComponent

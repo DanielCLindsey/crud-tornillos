@@ -1,0 +1,22 @@
+.delete-tornillo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+
+  &__message, &__footer{
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__message {
+    flex-direction: column;
+  }
+
+  &__footer {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
