@@ -72,6 +72,8 @@ export class TornillosComponent implements OnInit, OnDestroy {
         ? Math.min(startIndex + pageSize, length)
         : startIndex + pageSize;
 
-    return `${startIndex + 1} - ${endIndex} de ${length} ítems | ${page} de ${pageSize} páginas`;
+    const totalPages = Math.floor(length/pageSize) + 1;
+
+    return `${startIndex + 1} - ${endIndex} de ${length} ítems | ${page + 1} de ${totalPages} páginas`;
   };
 }
