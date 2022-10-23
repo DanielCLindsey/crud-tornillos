@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FooterModule } from '../../footer/footer.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatIconModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FooterModule
   ],
   exports: [
     TornillosComponent

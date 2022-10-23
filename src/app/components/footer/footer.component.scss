@@ -1,0 +1,13 @@
+:host {
+  position: fixed;
+  bottom: 0px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  width: fill-available;
+  height: 3rem;
+  padding: 1rem;
+
+  border-top: 0.25rem solid var(--cucumber);
+}
