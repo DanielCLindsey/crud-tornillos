@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Store } from '@ngrx/store';
@@ -29,7 +29,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
 
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
-  constructor(private store: Store, public dialog: MatDialog) {}
+  constructor(private store: Store, @Optional() public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.store.dispatch(initTornillos());

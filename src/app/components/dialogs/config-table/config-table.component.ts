@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs';
@@ -17,7 +17,7 @@ export class ConfigTableComponent implements OnInit {
   columnOrder$ = this.store.select(selectColumnOrder);
   currentColumnOrder: Map<number, TornilloTableColumnDef> = new Map();
 
-  constructor(private store: Store, public dialogRef: MatDialogRef<ConfigTableComponent>) { }
+  constructor(private store: Store, @Optional() public dialogRef: MatDialogRef<ConfigTableComponent>) { }
 
   ngOnInit(): void {
     this.columnOrder$.pipe(take(1)).subscribe((columnOrder) => {

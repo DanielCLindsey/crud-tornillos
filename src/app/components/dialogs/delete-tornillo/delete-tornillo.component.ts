@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Tornillo } from 'src/app/services/tornillos.service';
@@ -11,7 +11,7 @@ import { deleteTornillo } from 'src/app/stores/tornillos/tornillos.actions';
 })
 export class DeleteTornilloComponent {
 
-  constructor(public dialogRef: MatDialogRef<DeleteTornilloComponent>, @Inject(MAT_DIALOG_DATA) public data: Tornillo, private store: Store) { }
+  constructor(@Optional() public dialogRef: MatDialogRef<DeleteTornilloComponent>, @Optional() @Inject(MAT_DIALOG_DATA) public data: Tornillo, private store: Store) { }
 
   delete() {
     this.store.dispatch(deleteTornillo({ tornillo: this.data }));

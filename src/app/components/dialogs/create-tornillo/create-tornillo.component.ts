@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Optional } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -18,7 +18,7 @@ export class CreateTornilloComponent {
     brand: new FormControl({ value: '', disabled: false}, [Validators.required])
   })
 
-  constructor(public dialogRef: MatDialogRef<CreateTornilloComponent>, private store: Store) {}
+  constructor(@Optional() public dialogRef: MatDialogRef<CreateTornilloComponent>, private store: Store) {}
 
   decreaseNumber(control: string) {
     const selectedControl = this.createTornillo.get([control]);
