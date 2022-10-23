@@ -28,4 +28,12 @@ describe('CreateTornilloComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should close', () => {
+    component.close();
+  })
+
+  it('should submit', () => {
+    component.submit();
+  })
 });

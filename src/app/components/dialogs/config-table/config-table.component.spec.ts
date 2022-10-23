@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { initialState } from 'src/app/stores/tornillos/tornillos.reducers';
 import { TornillosState } from 'src/app/stores/tornillos/tornillos.state';
+import { cold } from 'jasmine-marbles';
 
 import { ConfigTableComponent } from './config-table.component';
 
@@ -28,4 +29,12 @@ describe('ConfigTableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should close', () => {
+    component.close();
+  })
+
+  it('should submit', () => {
+    component.submit();
+  })
 });

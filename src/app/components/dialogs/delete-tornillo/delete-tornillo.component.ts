@@ -19,6 +19,6 @@ export class DeleteTornilloComponent {
   }
 
   close() {
-    this.dialogRef.close();
+    this.dialogRef?.close();
   }
 }
