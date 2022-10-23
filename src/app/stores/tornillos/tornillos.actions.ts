@@ -2,8 +2,7 @@ import { createAction, props } from '@ngrx/store';
 import { Tornillo } from 'src/app/services/tornillos.service';
 
 export const initTornillos            = createAction('[Tornillos] Tornillos initializing');
-export const tornillosInitialized     = createAction('[Tornillos] Tornillos initialized', props<{ nextId: number, tornillos: Tornillo[], columnOrder: any[] }>());
-export const updateTornillos          = createAction('[Tornillos] Updating tornillos', props<{ tornillos: Tornillo[] }>());
+export const tornillosInitialized     = createAction('[Tornillos] Tornillos initialized', props<{ tornillos: Tornillo[], columnOrder: any[] }>());
 
 export const createTornillo           = createAction('[Tornillo] Creating tornillo', props<{ tornillo: Tornillo }>());
 export const tornilloCreated          = createAction('[Tornillo] Tornillo created');

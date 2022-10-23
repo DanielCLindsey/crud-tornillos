@@ -3,9 +3,8 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
 import { map, of, switchMap } from "rxjs";
 import { TornillosService } from "src/app/services/tornillos.service";
-import { changeSelectedTornillo, createTornillo, deleteTornillo, initTornillos, selectedTornilloChanged, tornilloCreated, tornilloDeleted, tornillosInitialized } from "./tornillos.actions";
+import { changeSelectedTornillo, createTornillo, deleteTornillo, initTornillos, selectedTornilloChanged, tornilloCreated, tornilloDeleted, tornillosInitialized} from "./tornillos.actions";
 import { initialState } from "./tornillos.reducers";
-
 @Injectable()
 export class TornillosEffects {
   constructor(private actions$: Actions, private store: Store, private tornillosService: TornillosService) {}
@@ -14,14 +13,17 @@ export class TornillosEffects {
     return this.actions$.pipe(
       ofType(initTornillos),
       switchMap(() => this.tornillosService.getTornillos()),
-      map((tornillos) => tornillosInitialized({ ...initialState, tornillos  }))
+      map((tornillos) => tornillosInitialized({ ...initialState, tornillos }))
     )
   });
+
   createTornillo$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(createTornillo),
-      switchMap(() => of()),
-      map(() => tornilloCreated())
+      switchMap(({ tornillo }) => this.tornillosService.postTornillo(tornillo)),
+      map(() => {
+        return tornilloCreated();
+      })
     )
   });
 
