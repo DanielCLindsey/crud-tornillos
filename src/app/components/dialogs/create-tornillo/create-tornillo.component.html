@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="footer">
-    <button mat-flat-button color="accent" mat-dialog-close>Cancelar</button>
+    <button mat-flat-button color="accent" (click)="close()">Cancelar</button>
     <button mat-flat-button color="primary" type="submit" [disabled]="createTornillo.invalid" (click)="submit()">Guardar</button>
   </div>
 </form>

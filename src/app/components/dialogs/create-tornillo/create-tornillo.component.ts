@@ -42,6 +42,11 @@ export class CreateTornilloComponent {
   }
 
   submit() {
-    this.store.dispatch(createTornillo({ tornillo: this.createTornillo.value }))
+    this.store.dispatch(createTornillo({ tornillo: this.createTornillo.value }));
+    this.close();
+  }
+
+  close() {
+    this.dialogRef.close()
   }
 }
