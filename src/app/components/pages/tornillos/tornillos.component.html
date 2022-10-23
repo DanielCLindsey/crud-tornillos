@@ -1,4 +1,5 @@
 <app-content>
+  <div class="table-config"><button mat-icon-button color="primary"><mat-icon>settings</mat-icon></button></div>
   <table mat-table [dataSource]="dataSource" class="tornillos-table">
     <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
       <th mat-header-cell *matHeaderCellDef>
