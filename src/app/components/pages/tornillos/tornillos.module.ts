@@ -11,7 +11,7 @@ import { FooterModule } from '../../footer/footer.module';
 import { CreateTornilloModule } from '../../dialogs/create-tornillo/create-tornillo.module';
 import { DeleteTornilloModule } from '../../dialogs/delete-tornillo/delete-tornillo.module';
 import { ConfigTableModule } from '../../dialogs/config-table/config-table.module';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { ConfigTableModule } from '../../dialogs/config-table/config-table.modul
     FooterModule,
     CreateTornilloModule,
     DeleteTornilloModule,
-    ConfigTableModule
+    ConfigTableModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     TornillosComponent
