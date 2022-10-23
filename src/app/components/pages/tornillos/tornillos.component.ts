@@ -9,11 +9,13 @@ import { Subscription } from 'rxjs'
 import {MatDialog} from '@angular/material/dialog';
 import { CreateTornilloComponent } from '../../dialogs/create-tornillo/create-tornillo.component';
 import { DeleteTornilloComponent } from '../../dialogs/delete-tornillo/delete-tornillo.component';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-tornillos',
   templateUrl: './tornillos.component.html',
-  styleUrls: ['./tornillos.component.scss']
+  styleUrls: ['./tornillos.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TornillosComponent implements OnInit, OnDestroy {
 
@@ -75,7 +77,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
 
     const totalPages = Math.floor(length/pageSize) + 1;
 
-    return `${startIndex + 1} - ${endIndex} de ${length} ítems | ${page + 1} de ${totalPages} páginas`;
+    return `${startIndex + 1} - ${endIndex} de ${length} ítems / ${page + 1} de ${totalPages} páginas`;
   };
 
   deleteTornillo(tornillo: Tornillo) {
