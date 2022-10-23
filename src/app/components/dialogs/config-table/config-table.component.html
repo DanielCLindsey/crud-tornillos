@@ -1,3 +1,14 @@
+<div class="header">
+  <div class="header__info">
+    <p>Reordenar, fijar u ocultar las columnas de la tabla</p>
+    <h3>Configurar columnas</h3>
+  </div>
+  <div class="header__close">
+    <button mat-icon-button (click)="close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
 <div cdkDropList class="column-list" (cdkDropListDropped)="drop($event)">
   <div class="column-list__column" *ngFor="let column of currentColumnOrder.values(); let i = index" cdkDrag>
     <div class="order">{{ i }}</div>
@@ -7,4 +18,8 @@
       <div class="options__show"><button mat-icon-button><mat-icon>remove_red_eye</mat-icon></button></div>
     </div>
   </div>
+</div>
+<div class="footer">
+  <button class="footer__button" mat-flat-button color="accent" (click)="close()">Cancelar</button>
+  <button class="footer__button" mat-flat-button color="primary" type="submit" (click)="submit()">Aplicar</button>
 </div>

@@ -1,8 +1,10 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs';
 import { TornilloTableColumnDef } from 'src/app/services/tornillos.service';
+import { changeColumnOrder } from 'src/app/stores/tornillos/tornillos.actions';
 import { selectColumnOrder } from 'src/app/stores/tornillos/tornillos.selectors';
 
 @Component({
@@ -15,7 +17,7 @@ export class ConfigTableComponent implements OnInit {
   columnOrder$ = this.store.select(selectColumnOrder);
   currentColumnOrder: Map<number, TornilloTableColumnDef> = new Map();
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, public dialogRef: MatDialogRef<ConfigTableComponent>) { }
 
   ngOnInit(): void {
     this.columnOrder$.pipe(take(1)).subscribe((columnOrder) => {
@@ -33,5 +35,14 @@ export class ConfigTableComponent implements OnInit {
       this.currentColumnOrder.set(event.previousIndex, auxColumnCurrent);
       this.currentColumnOrder.set(event.currentIndex, auxColumnPrev);
     }
+  }
+
+  submit() {
+    this.store.dispatch(changeColumnOrder({ columnOrder: [...this.currentColumnOrder.values()] }));
+    this.close();
+  }
+
+  close() {
+    this.dialogRef.close()
   }
 }
