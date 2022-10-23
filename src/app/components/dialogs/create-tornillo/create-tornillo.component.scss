@@ -1,6 +1,5 @@
 @use '../../../../styles/colors';
-
-:host {
+form{
   display: grid;
   height: fill-available;
   grid-template-rows: 3rem auto 3rem;

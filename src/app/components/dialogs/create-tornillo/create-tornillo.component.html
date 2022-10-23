@@ -1,45 +1,47 @@
-<div class="header">
-  <h1>Nuevo producto</h1>
-</div>
-<form [formGroup]="createTornillo" class="body">
-  <div class="input-tornillo input-tornillo--100">
-    <label for="name">Nombre</label>
-    <div class="input-tornillo__container">
-      <input id="name" type="text" formControlName="name">
-    </div>
+<form [formGroup]="createTornillo">
+  <div class="header">
+    <h1>Nuevo producto</h1>
   </div>
-  <div class="input-tornillo input-tornillo--50">
-    <label for="price">Precio</label>
-    <div class="input-tornillo__container input-tornillo__container--number">
-      <button mat-flat-button (click)="decreaseNumber('price')">-</button>
-      <input id="price" type="text" formControlName="price">
-      <button mat-flat-button (click)="increaseNumber('price')">+</button>
-    </div>
-  </div>
-  <div class="input-tornillo input-tornillo--50">
-    <label for="format">Formato</label>
-    <div class="input-tornillo__container">
-      <select name="format">
-        <option value="">Seleccione un valor</option>
-        <option value="black">black</option>
-        <option value="azure">azure</option>
-        <option value="orange">orange</option>
-        <option value="white">white</option>
-        <option value="gold">gold</option>
-        <option value="magenta">magenta</option>
-        <option value="olive">olive</option>
-        <option value="orchid">orchid</option>
-      </select>
+  <div class="body">
+    <div class="input-tornillo input-tornillo--100">
+      <label for="name">Nombre</label>
+      <div class="input-tornillo__container">
+        <input id="name" type="text" formControlName="name">
       </div>
-  </div>
-  <div class="input-tornillo input-tornillo--100">
-    <label for="first-name">Marca</label>
-    <div class="input-tornillo__container">
-      <input id="first-name" type="text" formControlName="name">
     </div>
+    <div class="input-tornillo input-tornillo--50">
+      <label for="price">Precio</label>
+      <div class="input-tornillo__container input-tornillo__container--number">
+        <button mat-flat-button (click)="decreaseNumber('price')">-</button>
+        <input id="price" type="text" formControlName="price">
+        <button mat-flat-button (click)="increaseNumber('price')">+</button>
+      </div>
+    </div>
+    <div class="input-tornillo input-tornillo--50">
+      <label for="format">Formato</label>
+      <div class="input-tornillo__container">
+        <select name="format" formControlName="format">
+          <option value="">Seleccione un valor</option>
+          <option value="black">black</option>
+          <option value="azure">azure</option>
+          <option value="orange">orange</option>
+          <option value="white">white</option>
+          <option value="gold">gold</option>
+          <option value="magenta">magenta</option>
+          <option value="olive">olive</option>
+          <option value="orchid">orchid</option>
+        </select>
+        </div>
+    </div>
+    <div class="input-tornillo input-tornillo--100">
+      <label for="first-name">Marca</label>
+      <div class="input-tornillo__container">
+        <input id="first-name" type="text" formControlName="brand">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button mat-flat-button color="accent" mat-dialog-close>Cancelar</button>
+    <button mat-flat-button color="primary" type="submit" [disabled]="createTornillo.invalid" (click)="submit()">Guardar</button>
   </div>
 </form>
-<div class="footer">
-  <button mat-flat-button color="accent">Cancelar</button>
-  <button mat-flat-button color="primary">Guardar</button>
-</div>
