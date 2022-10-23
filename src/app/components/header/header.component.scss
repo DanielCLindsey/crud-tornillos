@@ -1,6 +1,10 @@
 @use '../../../styles/colors';
 
 :host {
+  position: sticky;
+  top: 0px;
+  z-index: 1; //mat-button bug
+
   display: flex;
   justify-content: space-between;
 
@@ -8,6 +12,7 @@
   padding: 1rem;
 
   border-bottom: 0.25rem solid var(--cucumber);
+  background-color: white;
 }
 
 .user-info {
