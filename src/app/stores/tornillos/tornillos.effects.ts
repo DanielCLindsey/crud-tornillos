@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
 import { map, of, switchMap } from "rxjs";
 import { TornillosService } from "src/app/services/tornillos.service";
-import { changeSelectedTornillo, createTornillo, deleteTornillo, initTornillos, selectedTornilloChanged, tornilloCreated, tornilloDeleted, tornillosInitialized, tornillosUpdated, updateTornillos } from "./tornillos.actions";
+import {  changeColumnOrder, columnOrderChanged, createTornillo, deleteTornillo, initTornillos, tornilloCreated, tornilloDeleted, tornillosInitialized, tornillosUpdated, updateTornillos } from "./tornillos.actions";
 import { initialState } from "./tornillos.reducers";
 
 @Injectable()
@@ -42,11 +42,11 @@ export class TornillosEffects {
     )
   });
 
-  changeSelectedTornillo$ = createEffect(() => {
+  changeColumnOrder$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(changeSelectedTornillo),
-      switchMap(() => of()),
-      map((selectedTornillo) => selectedTornilloChanged({ selectedTornillo }))
+      ofType(changeColumnOrder),
+      map(({ columnOrder }) => columnOrderChanged({ columnOrder }))
     )
-  })
+  });
+
 }

@@ -6,3 +6,4 @@ export const selectTornillos        = createFeatureSelector<TornillosState>(TORN
 export const selectTornillosList    = createSelector(selectTornillos, ({ tornillos }) => tornillos);
 export const selectTornillosAmount  = createSelector(selectTornillos, ({ tornillos }) => tornillos.length);
 export const selectSelectedTornillo = createSelector(selectTornillos, ({ selectedTornillo }) => selectedTornillo);
+export const selectColumnOrder      = createSelector(selectTornillos, ({ columnOrder }) => columnOrder);
