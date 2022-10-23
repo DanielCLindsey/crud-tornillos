@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockStore } from '@ngrx/store/testing';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { initialState } from 'src/app/stores/tornillos/tornillos.reducers';
 import { TornillosState } from 'src/app/stores/tornillos/tornillos.state';
 import { HomeComponent } from './home.component';
@@ -28,7 +28,4 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-function provideMockStore<T>(arg0: { initialState: any; }): any {
-  throw new Error('Function not implemented.');
-}
 
