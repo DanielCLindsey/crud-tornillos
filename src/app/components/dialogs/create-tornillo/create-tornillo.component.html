@@ -34,14 +34,14 @@
         </div>
     </div>
     <div class="input-tornillo input-tornillo--100">
-      <label for="first-name">Marca</label>
+      <label for="brand">Marca</label>
       <div class="input-tornillo__container">
-        <input id="first-name" type="text" formControlName="brand">
+        <input id="brand" type="text" formControlName="brand">
       </div>
     </div>
   </div>
   <div class="footer">
-    <button mat-flat-button color="accent" (click)="close()">Cancelar</button>
-    <button mat-flat-button color="primary" type="submit" [disabled]="createTornillo.invalid" (click)="submit()">Guardar</button>
+    <button class="footer__button" mat-flat-button color="accent" (click)="close()">Cancelar</button>
+    <button class="footer__button" mat-flat-button color="primary" type="submit" [disabled]="createTornillo.invalid" (click)="submit()">Guardar</button>
   </div>
 </form>
