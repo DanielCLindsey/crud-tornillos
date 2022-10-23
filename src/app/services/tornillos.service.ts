@@ -37,6 +37,10 @@ export class TornillosService {
       return tornillo;
     }));
   }
+
+  deleteTornillo(tornillo: Tornillo): Observable<void> {
+    return from(this.db.object(tornillo.reference).remove().then(() => this.store.dispatch(updateTornillos())));
+  }
 }
 
 export interface Tornillo {
