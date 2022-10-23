@@ -29,4 +29,11 @@ describe('TornillosService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should get tornillos', () => {
+    service.getTornillos().subscribe(() => {
+
+    })
+  });
+
 });

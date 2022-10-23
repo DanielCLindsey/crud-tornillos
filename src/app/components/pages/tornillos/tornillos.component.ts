@@ -58,7 +58,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
   }
 
   createTornillo() {
-    this.dialog.open(CreateTornilloComponent, {
+    this.dialog?.open(CreateTornilloComponent, {
       width: '80vw',
       height: '70vh'
     })
@@ -85,7 +85,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
   };
 
   deleteTornillo(tornillo: Tornillo) {
-    this.dialog.open(DeleteTornilloComponent, {
+    this.dialog?.open(DeleteTornilloComponent, {
       width: '60vw',
       height: '200px',
       panelClass: 'error-dialog',
@@ -94,7 +94,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
   }
 
   configTable() {
-    this.dialog.open(ConfigTableComponent, {
+    this.dialog?.open(ConfigTableComponent, {
       width: '80vw',
       height: '70vh'
     })

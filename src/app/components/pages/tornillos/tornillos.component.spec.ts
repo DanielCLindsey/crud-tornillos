@@ -28,4 +28,18 @@ describe('TornillosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should open create dialog', () => {
+    component.createTornillo();
+  })
+  it('should open delete dialog', () => {
+    component.deleteTornillo({ brand: '', format: '', name: '', price: 0, reference: ''});
+  })
+  it('should open config dialog', () => {
+    component.configTable();
+  })
+
+  it('should generate range label', () => {
+    component.espRangeLabel(0, 1, 1);
+  })
 });
