@@ -24,7 +24,7 @@ import { CreateTornilloModule } from '../../dialogs/create-tornillo/create-torni
     MatButtonModule,
     MatPaginatorModule,
     FooterModule,
-    CreateTornilloModule
+    CreateTornilloModule,
   ],
   exports: [
     TornillosComponent

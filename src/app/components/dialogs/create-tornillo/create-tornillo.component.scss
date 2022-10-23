@@ -1,3 +1,5 @@
+@use '../../../../styles/colors';
+
 :host {
   display: grid;
   height: fill-available;
@@ -9,12 +11,59 @@
 .header, .body, .footer {
   display: flex;
   flex-direction: row;
+  gap: 1rem;
 }
 
 .body {
   flex-wrap: wrap;
+
+  .input-tornillo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+
+    &--100 {
+      flex-basis: 100%;
+    }
+
+    &--50 {
+      flex-basis: calc(50% - 0.5rem);
+    }
+    &__container{
+      display: flex;
+      gap: 0.25rem;
+      justify-content: space-between;
+
+      border: 2px solid var(--grey-background);
+      border-radius: 0.25rem;
+      height: 2.5rem;
+
+      input, select {
+        width: 100%;
+        height: 100%;
+        padding: 0 1.5rem;
+      }
+
+      &--number {
+        input{
+          width: auto;
+          margin: auto;
+          text-align: center;
+        }
+        button{
+          font-size: 2rem;
+        }
+      }
+
+    }
+  }
 }
 
 .footer {
   justify-content: space-between;
+  button {
+    width: 6rem;
+  }
 }

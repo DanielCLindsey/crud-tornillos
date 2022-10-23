@@ -1,9 +1,44 @@
 <div class="header">
   <h1>Nuevo producto</h1>
 </div>
-<div class="body">
-  
-</div>
+<form [formGroup]="createTornillo" class="body">
+  <div class="input-tornillo input-tornillo--100">
+    <label for="name">Nombre</label>
+    <div class="input-tornillo__container">
+      <input id="name" type="text" formControlName="name">
+    </div>
+  </div>
+  <div class="input-tornillo input-tornillo--50">
+    <label for="price">Precio</label>
+    <div class="input-tornillo__container input-tornillo__container--number">
+      <button mat-flat-button>-</button>
+      <input id="price" type="text" min="0" formControlName="price">
+      <button mat-flat-button>+</button>
+    </div>
+  </div>
+  <div class="input-tornillo input-tornillo--50">
+    <label for="format">Formato</label>
+    <div class="input-tornillo__container">
+      <select name="format">
+        <option value="">Seleccione un valor</option>
+        <option value="black">black</option>
+        <option value="azure">azure</option>
+        <option value="orange">orange</option>
+        <option value="white">white</option>
+        <option value="gold">gold</option>
+        <option value="magenta">magenta</option>
+        <option value="olive">olive</option>
+        <option value="orchid">orchid</option>
+      </select>
+      </div>
+  </div>
+  <div class="input-tornillo input-tornillo--100">
+    <label for="first-name">Marca</label>
+    <div class="input-tornillo__container">
+      <input id="first-name" type="text" formControlName="name">
+    </div>
+  </div>
+</form>
 <div class="footer">
   <button mat-flat-button color="accent">Cancelar</button>
   <button mat-flat-button color="primary">Guardar</button>
