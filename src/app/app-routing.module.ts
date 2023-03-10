@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'tornillos',
     canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToHome},
+    data: { authGuardPipe: redirectUnauthorizedToHome },
     loadChildren: () => import('./components/pages/tornillos/tornillos.module').then(m => m.TornillosModule)
   },
   {

@@ -2,7 +2,7 @@ import { Component, Optional } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { createTornillo } from 'src/app/stores/tornillos/tornillos.actions';
+import { TornillosActions } from 'src/app/stores/tornillos/tornillos.actions';
 
 @Component({
   selector: 'app-create-tornillo',
@@ -42,7 +42,7 @@ export class CreateTornilloComponent {
   }
 
   submit() {
-    this.store.dispatch(createTornillo({ tornillo: this.createTornillo.value }));
+    this.store.dispatch(TornillosActions.createTornillo({ tornillo: this.createTornillo.value }));
     this.close();
   }
 

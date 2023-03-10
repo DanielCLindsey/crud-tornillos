@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs';
 import { TornilloTableColumnDef } from 'src/app/services/tornillos.service';
-import { changeColumnOrder } from 'src/app/stores/tornillos/tornillos.actions';
+import { TornillosActions } from 'src/app/stores/tornillos/tornillos.actions';
 import { selectColumnOrder } from 'src/app/stores/tornillos/tornillos.selectors';
 
 @Component({
@@ -38,7 +38,7 @@ export class ConfigTableComponent implements OnInit {
   }
 
   submit() {
-    this.store.dispatch(changeColumnOrder({ columnOrder: [...this.currentColumnOrder.values()] }));
+    this.store.dispatch(TornillosActions.changeColumnOrder({ columnOrder: [...this.currentColumnOrder.values()] }));
     this.close();
   }
 

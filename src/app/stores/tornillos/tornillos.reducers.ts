@@ -1,6 +1,8 @@
 import { createReducer, on } from "@ngrx/store";
 import { Tornillo } from "src/app/services/tornillos.service";
-import { columnOrderChanged, tornilloCreated, tornilloDeleted, tornillosInitialized, tornillosUpdated } from "./tornillos.actions";
+import {
+  TornillosActions,
+} from "./tornillos.actions";
 import { TornillosState } from "./tornillos.state";
 
 export const TORNILLOS_FEATURE_KEY = 'tornillos';
@@ -32,10 +34,10 @@ export const initialState: TornillosState = {
 
 export const tornilloReducer = createReducer(
   initialState,
-  on(tornillosInitialized, (_state, { tornillos, columnOrder }): TornillosState => ({ tornillos, columnOrder })),
-  on(tornillosUpdated, (state, { tornillos }): TornillosState => ({...state, tornillos})),
+  on(TornillosActions.tornillosInitialized, (_state, { tornillos, columnOrder }): TornillosState => ({ tornillos, columnOrder })),
+  on(TornillosActions.tornillosUpdated, (state, { tornillos }): TornillosState => ({...state, tornillos})),
 
-  on(tornilloCreated, (state): TornillosState => ({...state, selectedTornillo: undefined})),
-  on(tornilloDeleted, (state): TornillosState => ({...state, selectedTornillo: undefined})),
-  on(columnOrderChanged, (state, { columnOrder }): TornillosState => ({...state, columnOrder}))
+  on(TornillosActions.tornilloCreated, (state): TornillosState => ({...state, selectedTornillo: undefined})),
+  on(TornillosActions.tornilloDeleted, (state): TornillosState => ({...state, selectedTornillo: undefined})),
+  on(TornillosActions.columnOrderChanged, (state, { columnOrder }): TornillosState => ({...state, columnOrder}))
 )

@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Store } from '@ngrx/store';
 import { Tornillo, TornilloTableColumnDef } from 'src/app/services/tornillos.service';
-import { initTornillos } from 'src/app/stores/tornillos/tornillos.actions';
+import { TornillosActions } from 'src/app/stores/tornillos/tornillos.actions';
 import { selectTornillos } from 'src/app/stores/tornillos/tornillos.selectors';
 import { Subscription, timer } from 'rxjs'
 import {MatDialog} from '@angular/material/dialog';
@@ -32,7 +32,7 @@ export class TornillosComponent implements OnInit, OnDestroy {
   constructor(private store: Store, @Optional() public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.store.dispatch(initTornillos());
+    this.store.dispatch(TornillosActions.initializeTornillos());
     this.tornillosSub = this.tornillos$.subscribe(({tornillos, columnOrder}) => {
       timer(1500).subscribe(() => {
         this.columns = columnOrder;

@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
-import { map, of, switchMap } from "rxjs";
+import { map, switchMap } from "rxjs";
 import { TornillosService } from "src/app/services/tornillos.service";
-import {  changeColumnOrder, columnOrderChanged, createTornillo, deleteTornillo, initTornillos, tornilloCreated, tornilloDeleted, tornillosInitialized, tornillosUpdated, updateTornillos } from "./tornillos.actions";
+import {
+  TornillosActions,
+} from "./tornillos.actions";
 import { initialState } from "./tornillos.reducers";
 
 @Injectable()
@@ -12,40 +14,41 @@ export class TornillosEffects {
 
   initTornillos$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(initTornillos),
+      ofType(TornillosActions.initializeTornillos
+      ),
       switchMap(() => this.tornillosService.getTornillos()),
-      map((tornillos) => tornillosInitialized({ ...initialState, tornillos }))
+      map((tornillos) => TornillosActions.tornillosInitialized({ ...initialState, tornillos }))
     )
   });
 
   updateTornillos$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(updateTornillos),
+      ofType(TornillosActions.updateTornillos),
       switchMap(() => this.tornillosService.getTornillos()),
-      map((tornillos) => tornillosUpdated({ tornillos }))
+      map((tornillos) => TornillosActions.tornillosUpdated({ tornillos }))
     )
   });
 
   createTornillo$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(createTornillo),
+      ofType(TornillosActions.createTornillo),
       switchMap(({ tornillo }) => this.tornillosService.postTornillo(tornillo)),
-      map(() => tornilloCreated())
+      map(() => TornillosActions.tornilloCreated())
     )
   });
 
   deleteTornillo$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(deleteTornillo),
+      ofType(TornillosActions.deleteTornillo),
       switchMap(({ tornillo }) => this.tornillosService.deleteTornillo(tornillo)),
-      map(() => tornilloDeleted())
+      map(() => TornillosActions.tornilloDeleted())
     )
   });
 
   changeColumnOrder$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(changeColumnOrder),
-      map(({ columnOrder }) => columnOrderChanged({ columnOrder }))
+      ofType(TornillosActions.changeColumnOrder),
+      map(({ columnOrder }) => TornillosActions.columnOrderChanged({ columnOrder }))
     )
   });
 

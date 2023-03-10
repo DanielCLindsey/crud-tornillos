@@ -3,7 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { DatabaseReference, DataSnapshot } from '@angular/fire/compat/database/interfaces';
 import { Store } from '@ngrx/store';
 import { from, Observable } from 'rxjs';
-import { updateTornillos } from '../stores/tornillos/tornillos.actions';
+import {TornillosActions} from '../stores/tornillos/tornillos.actions';
 
 
 @Injectable({
@@ -33,13 +33,13 @@ export class TornillosService {
 
   postTornillo(tornillo: Tornillo): Observable<DatabaseReference>{
     return from(this.db.list<Tornillo>('tornillos').push(tornillo).then((tornillo) => {
-      this.store.dispatch(updateTornillos())
+      this.store.dispatch(TornillosActions.updateTornillos())
       return tornillo;
     }));
   }
 
   deleteTornillo(tornillo: Tornillo): Observable<void> {
-    return from(this.db.object('tornillos/'+tornillo.reference).remove().then(() => this.store.dispatch(updateTornillos())));
+    return from(this.db.object('tornillos/'+tornillo.reference).remove().then(() => this.store.dispatch(TornillosActions.updateTornillos())));
   }
 }
 
