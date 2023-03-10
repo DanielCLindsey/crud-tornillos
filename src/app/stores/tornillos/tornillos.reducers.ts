@@ -1,8 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { Tornillo } from "src/app/services/tornillos.service";
-import {
-  TornillosActions,
-} from "./tornillos.actions";
+import { TornillosActions } from "./tornillos.actions";
 import { TornillosState } from "./tornillos.state";
 
 export const TORNILLOS_FEATURE_KEY = 'tornillos';

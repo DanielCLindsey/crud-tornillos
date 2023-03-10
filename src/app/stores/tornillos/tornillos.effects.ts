@@ -3,9 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
 import { map, switchMap } from "rxjs";
 import { TornillosService } from "src/app/services/tornillos.service";
-import {
-  TornillosActions,
-} from "./tornillos.actions";
+import { TornillosActions } from "./tornillos.actions";
 import { initialState } from "./tornillos.reducers";
 
 @Injectable()
