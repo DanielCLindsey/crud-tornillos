@@ -13,6 +13,7 @@ import { TornillosEffects } from './stores/tornillos/tornillos.effects';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
+import {routerReducer} from "@ngrx/router-store";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule,
     RouterModule,
     StoreModule.forRoot({
-      [TORNILLOS_FEATURE_KEY]: tornilloReducer
+      [TORNILLOS_FEATURE_KEY]: tornilloReducer,
+      ['router']: routerReducer
     }),
     EffectsModule.forRoot([TornillosEffects]),
     AngularFireModule.initializeApp(environment.firebaseConfig),
